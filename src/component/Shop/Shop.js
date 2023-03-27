@@ -34,7 +34,6 @@ const Shop = () => {
       </div>
 
       <div className="order-summary">
-        <p>Order Summary</p>
         {<AddToCart items={items}></AddToCart>}
       </div>
     </div>

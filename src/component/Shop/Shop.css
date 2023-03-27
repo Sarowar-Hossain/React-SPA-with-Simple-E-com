@@ -1,15 +1,17 @@
 .shop-container{
     width: 1440px;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 8fr 1fr;
+    /* justify-items: right; */
     margin: 0 auto;
-    padding: 25px;
+    /* padding: 0 25px; */
     
 }
 .product-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    margin: 50px;
+    gap: 40px;
 }
 
 .order-summary{

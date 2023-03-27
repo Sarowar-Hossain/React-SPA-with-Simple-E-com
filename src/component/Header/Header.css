@@ -1,17 +1,25 @@
+.container{
+    width: 100%;
+    background-color: #1C2B35;
+}
+
 .header-container{
     width: 1440px;
     display: flex;
-    background-color: #1C2B35;
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    padding: 0 30px;
     margin: 0 auto;
 
 }
-
+.logo{
+    margin-left: 25px;
+}
 .header-container img{
     width: 140px;
+}
+.menus{
+    margin-right: 25px;
 }
 .menus a{
     text-decoration: none;

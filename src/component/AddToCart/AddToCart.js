@@ -3,8 +3,10 @@ import { faArrowCircleRight, faRemove} from "@fortawesome/free-solid-svg-icons";
 import "./AddToCart.css";
 
 const AddToCart = ({ items }) => {
+  
   return (
     <div className="order-details">
+      <h4>Order Summary</h4>
       <p>Selected Items: {items.length}</p>
       <p>Total Price: $</p>
       <p>Total Shipping Charge: $</p>
