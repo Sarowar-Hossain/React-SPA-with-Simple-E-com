@@ -1,0 +1,16 @@
+.shop-container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.product-container{
+    
+    padding: 0 25px;
+}
+
+.order-summary{
+    background-color: rgba(255, 153, 0, 0.3);
+    width: 264px;
+    height: 944px;
+}
