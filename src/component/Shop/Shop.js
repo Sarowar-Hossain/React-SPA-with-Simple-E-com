@@ -9,7 +9,7 @@ const Shop = () => {
                 <Products></Products>
             </div>
             <div className='order-summary'>
-                <h1>Order-Summary</h1>
+                <p>Order Summary</p>
             </div>
         </div>
     );
