@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping} from '@fortawesome/free-solid-svg-icons'
 import "./Products.css";
 
-const Products = () => {
+const Products = ({addToCartHandle}) => {
+    // console.log(props.AddToCartHandle)
   const [products, setProducts] = useState([]);
+  
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json"
@@ -13,9 +15,7 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  const AddToCartHandle=(props)=>{
-    console.log(props);
-  }
+
 
   return (
     <div className="container">
@@ -27,7 +27,7 @@ const Products = () => {
             <p className="product-price">Price:{product.price}$</p>
             <p className="product-sr">Manufacturer: {product.seller}</p>
             <p className="product-sr">Ratings: {product.ratings} star </p>
-            <button className="cart-btn" onClick={()=>AddToCartHandle(product.id)}>
+            <button className="cart-btn" onClick={()=>addToCartHandle(product)}  >
                 Add to Cart 
                 <FontAwesomeIcon icon={faCartShopping}/>
             </button> 

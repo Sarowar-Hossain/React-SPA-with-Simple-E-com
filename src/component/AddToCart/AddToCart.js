@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   import { faArrowCircleRight, faCoffee, faDeleteLeft, faRemove } from '@fortawesome/free-solid-svg-icons'
 import './AddToCart.css'
 
-const AddToCart = () => {
+const AddToCart = ({items}) => {
+    // console.log(props);
     return (
         <div className='order-details'>
-            <p className='p-tag'>Selected Items:</p>
+            <p className='p-tag'>Selected Items: {items.length}</p>
             <p className='p-tag'>Total Price:</p>
             <p className='p-tag'>Total Shipping Charge:</p>
             <p className='p-tag'>Tax: $</p>
