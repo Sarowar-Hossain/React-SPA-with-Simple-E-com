@@ -1,39 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./Products.css";
 
-const Products = ({addToCartHandle}) => {
-    // console.log(props.AddToCartHandle)
-  const [products, setProducts] = useState([]);
-  
-  useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
-
-
-
+const Products = (props) => {
+  const { name, id, price, seller, ratings, img } = props.product;
+  const addToCartHandle = props.addToCartHandle;
   return (
-    <div className="container">
-      {products.map((product) => (
-        <div className="product-img" key={product.id}>
-          <img src={product.img} alt="" />
+    <div>
+      {
+        <div className="product-img" key={id}>
+          <img src={img} alt="" />
+
           <div className="product-details">
-            <h4>{product.name}</h4>
-            <p className="product-price">Price:{product.price}$</p>
-            <p className="product-sr">Manufacturer: {product.seller}</p>
-            <p className="product-sr">Ratings: {product.ratings} star </p>
-            <button className="cart-btn" onClick={()=>addToCartHandle(product)}  >
-                Add to Cart 
-                <FontAwesomeIcon icon={faCartShopping}/>
+            <h4>{name}</h4>
+            <p className="product-price">Price:{price}$</p>
+            <p className="product-sr">Manufacturer: {seller}</p>
+            <p className="product-sr">Ratings: {ratings} star </p>
+            <button className="cart-btn" onClick={()=>addToCartHandle(props.product)}>
+                Add to Cart <FontAwesomeIcon icon={faCartShopping}/>
             </button> 
           </div>
         </div>
-      ))}
+      }
     </div>
   );
 };
