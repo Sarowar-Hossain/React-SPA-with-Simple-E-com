@@ -12,7 +12,11 @@ const Products = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  console.log(products);
+
+  const AddToCartHandle=(props)=>{
+    console.log(props);
+  }
+
   return (
     <div className="container">
       {products.map((product) => (
@@ -23,9 +27,9 @@ const Products = () => {
             <p className="product-price">Price:{product.price}$</p>
             <p className="product-sr">Manufacturer: {product.seller}</p>
             <p className="product-sr">Ratings: {product.ratings} star </p>
-            <button className="cart-btn">
+            <button className="cart-btn" onClick={()=>AddToCartHandle(product.id)}>
                 Add to Cart 
-                <FontAwesomeIcon icon={faCartShopping} />
+                <FontAwesomeIcon icon={faCartShopping}/>
             </button> 
           </div>
         </div>
