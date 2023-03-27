@@ -2,16 +2,30 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-}
+    position: absolute;
+    
 
+}
 .product-container{
     width: 300px;
-    height: 500px;
+    height: 510px;
     border: 1px solid #95A0A7;
+    border-radius: 10px;
+    gap: 25px;
     
 }
 .product-container img{
     width: 285px;
     height: 285px;
 
+}
+
+.product-container button{
+    width: 300px;
+    height: 48px;
+    background: #FFE0B3;
+    border: 1px solid #95A0A7;
+    border-radius: 10px;
+    position: relative;
+    bottom: 0px;
 }
