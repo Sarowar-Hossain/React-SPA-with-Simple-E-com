@@ -2,22 +2,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight, faRemove} from "@fortawesome/free-solid-svg-icons";
 import "./AddToCart.css";
 
-const AddToCart = ({ items }) => {
-  console.log(items);
+const AddToCart = ({ cart }) => {
+  // console.log(items);
   let totalPrice = 0;
   let totalShipping = 0;
 
-  for (const item of items) {
+  for (const item of cart) {
     totalPrice = totalPrice + item.price;
     totalShipping = totalShipping + item.shipping;
   }
   const tax = totalPrice*7/100;
   const total = totalPrice + totalShipping + tax;
-  console.log(totalPrice);
+  // console.log(totalPrice);
   return (
     <div className="order-details">
       <h4>Order Summary</h4>
-      <p>Selected Items: {items.length}</p>
+      <p>Selected Items: {cart.length}</p>
       <p>Total Price: $ {totalPrice}</p>
       <p>Total Shipping Charge: $ {totalShipping}</p>
       <p>Tax: $ {tax.toFixed(2)}</p>
@@ -37,17 +37,3 @@ const AddToCart = ({ items }) => {
 };
 
 export default AddToCart;
-
-// my old calculation without localStorage
-
-// let tax;
-//   let shippingCharge;
-//   const totalPrice = items.reduce((total, item) => total + item.price, 0);
-//   if (totalPrice > 100) {
-//     tax = parseInt((3 / 100) * totalPrice);
-//     shippingCharge = parseInt((1 / 100) * totalPrice);
-//   } else {
-//     tax = 0;
-//     shippingCharge = 0;
-//   }
-//   const grandTotal = totalPrice + tax + shippingCharge;

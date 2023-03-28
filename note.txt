@@ -1,0 +1,15 @@
+1/ localstorage er added item er object ke for in 	use kore id ta nibo
+
+2/ ei id diye find() use kore product ta ke khuje 	ber korbo 'products' theke.
+
+3/	products er vitore je quantity ache sey quantity
+	ke local er quantity er value diye set korbo,
+
+4/ for in use kore je id gula pabo sey product 	gulare ek array of object a rakhbo 
+
+5/ last a array of object take 'setCart' a set kore
+	dibo
+
+
+
+  
