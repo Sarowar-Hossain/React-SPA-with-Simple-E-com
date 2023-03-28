@@ -1,23 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleRight, faRemove} from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleRight,
+  faRemove,
+} from "@fortawesome/free-solid-svg-icons";
 import "./AddToCart.css";
 
 const AddToCart = ({ cart }) => {
   // console.log(items);
   let totalPrice = 0;
   let totalShipping = 0;
+  let quantity = 0;
 
   for (const item of cart) {
-    totalPrice = totalPrice + item.price;
+    // default data te quantity 0 thake .... eitar solve kora holo
+    item.qunatity =  item.qunatity || 1;
+
+    totalPrice = totalPrice + item.price * item.qunatity;
     totalShipping = totalShipping + item.shipping;
+    quantity = quantity + item.qunatity;
   }
-  const tax = totalPrice*7/100;
+  const tax = (totalPrice * 7) / 100;
   const total = totalPrice + totalShipping + tax;
   // console.log(totalPrice);
   return (
     <div className="order-details">
       <h4>Order Summary</h4>
-      <p>Selected Items: {cart.length}</p>
+      <p>Selected Items: {quantity}</p>
       <p>Total Price: $ {totalPrice}</p>
       <p>Total Shipping Charge: $ {totalShipping}</p>
       <p>Tax: $ {tax.toFixed(2)}</p>
